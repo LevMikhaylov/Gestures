@@ -7,14 +7,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # Настройка фикстуры браузера
-@pytest.fixture(scope="module")
+@pytest.fixture
 def driver():
     service = Service('path_to_chromedriver')  # укажите путь к chrome driver
     driver = webdriver.Chrome(service=service)
-    driver.implicitly_wait(10)
-    yield driver
-    driver.quit()
-
 # Тест 1: Поиск видео по ключевому слову (жест поиска)
 def test_search_video(driver):
     driver.get("https://www.youtube.com")
