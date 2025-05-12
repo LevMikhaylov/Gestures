@@ -5,11 +5,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 # Фикстура инициализации драйвера Appium для мобильного браузера Chrome
-@pytest.fixture(scope="module")
+@pytest.fixture(
 def driver():
     desired_caps = {
         "platformName": "Android",
-        "platformVersion": "11.0",  # указать вашу версию
+        "platformVersion": "13",  
         "deviceName": "Android Emulator",
         "browserName": "Chrome",
         "chromedriverExecutable": "/path/to/chromedriver"  # обновите путь к chromedriver, совместимому с версией Chrome
